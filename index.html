@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronForge Fitness — Premium Sports Equipment & Home Gym Gear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p><i class="fas fa-bolt"></i> BLACK FRIDAY SALE — Up to 40% Off Select Equipment | Free Shipping on Orders Over $99 <i class="fas fa-bolt"></i></p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>IRON<strong>FORGE</strong></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="active" data-filter="all">All Equipment</a>
+                <a href="#" data-filter="strength">Strength</a>
+                <a href="#" data-filter="cardio">Cardio</a>
+                <a href="#" data-filter="accessories">Accessories</a>
+                <a href="#" data-filter="recovery">Recovery</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search equipment..." />
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="wishlist-btn" id="wishlistBtn">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">PREMIUM EQUIPMENT</span>
+            <h1>BUILD YOUR<br><span class="gradient-text">DREAM GYM</span></h1>
+            <p>Professional-grade fitness equipment for your home. Engineered for performance, designed for life.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="btn btn-outline">View Deals</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Customers</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="features-bar">
+        <div class="container">
+            <div class="feature">
+                <i class="fas fa-truck-fast"></i>
+                <div>
+                    <strong>Free Shipping</strong>
+                    <span>On orders over $99</span>
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-halved"></i>
+                <div>
+                    <strong>2-Year Warranty</strong>
+                    <span>On all equipment</span>
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-rotate-left"></i>
+                <div>
+                    <strong>30-Day Returns</strong>
+                    <span>Hassle-free policy</span>
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <strong>24/7 Support</strong>
+                    <span>Expert assistance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Showcase -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CATEGORIES</span>
+                <h2>Shop by Category</h2>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="strength" onclick="filterByCategory('strength')">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Strength Training">
+                    <div class="category-overlay">
+                        <h3>Strength Training</h3>
+                        <span>12 Products</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="cardio" onclick="filterByCategory('cardio')">
+                    <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=400&h=300&fit=crop" alt="Cardio Machines">
+                    <div class="category-overlay">
+                        <h3>Cardio Machines</h3>
+                        <span>8 Products</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="accessories" onclick="filterByCategory('accessories')">
+                    <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=300&fit=crop" alt="Accessories">
+                    <div class="category-overlay">
+                        <h3>Accessories</h3>
+                        <span>6 Products</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="recovery" onclick="filterByCategory('recovery')">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop" alt="Recovery">
+                    <div class="category-overlay">
+                        <h3>Recovery & Wellness</h3>
+                        <span>4 Products</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">OUR COLLECTION</span>
+                <h2>Premium Equipment</h2>
+                <p>Handpicked selection of the finest fitness gear for your home gym</p>
+            </div>
+            <div class="products-toolbar">
+                <div class="filter-pills" id="filterPills">
+                    <button class="pill active" data-filter="all">All <span class="pill-count">30</span></button>
+                    <button class="pill" data-filter="strength">Strength</button>
+                    <button class="pill" data-filter="cardio">Cardio</button>
+                    <button class="pill" data-filter="accessories">Accessories</button>
+                    <button class="pill" data-filter="recovery">Recovery</button>
+                </div>
+                <div class="sort-container">
+                    <select id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products are injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">REVIEWS</span>
+                <h2>What Our Customers Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The Olympic barbell set is absolutely top-notch. Professional quality at a fraction of the gym cost. My home gym is now better than most commercial ones."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Mike R.">
+                        <div>
+                            <strong>Mike Rodriguez</strong>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Fast shipping and the adjustable dumbbells are a game-changer. Replaced an entire rack of weights. Worth every penny for a compact home setup."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face" alt="Sarah L.">
+                        <div>
+                            <strong>Sarah Lawson</strong>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The power rack is built like a tank. Assembly was straightforward and the quality is comparable to equipment I've used at elite training facilities."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" alt="James K.">
+                        <div>
+                            <strong>James Kim</strong>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <i class="fas fa-envelope-open-text"></i>
+                <h2>Get 15% Off Your First Order</h2>
+                <p>Subscribe to our newsletter for exclusive deals, workout tips, and new product launches.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>IRON<strong>FORGE</strong></span>
+                    </a>
+                    <p>Premium fitness equipment for home gyms. Built to last, designed to perform.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="#">All Equipment</a>
+                    <a href="#">Strength Training</a>
+                    <a href="#">Cardio Machines</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Recovery</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns & Exchanges</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                    <a href="#">Affiliate Program</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 IronForge Fitness. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <span>Add some equipment to get started!</span>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="cartShipping">FREE</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="checkout()">
+                Proceed to Checkout <i class="fas fa-lock"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="product-modal" id="productModal">
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+        <div class="modal-body">
+            <div class="modal-gallery">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-badges" id="modalBadges"></div>
+            </div>
+            <div class="modal-details">
+                <span class="modal-category" id="modalCategory"></span>
+                <h2 id="modalName"></h2>
+                <div class="modal-rating" id="modalRating"></div>
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-price">
+                    <span class="current-price" id="modalPrice"></span>
+                    <span class="original-price" id="modalOriginalPrice"></span>
+                    <span class="discount-badge" id="modalDiscount"></span>
+                </div>
+                <div class="modal-features" id="modalFeatures"></div>
+                <div class="modal-actions">
+                    <div class="quantity-selector">
+                        <button onclick="changeModalQty(-1)">−</button>
+                        <span id="modalQty">1</span>
+                        <button onclick="changeModalQty(1)">+</button>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-modal" id="modalAddToCart">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
